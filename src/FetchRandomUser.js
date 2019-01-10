@@ -26,10 +26,6 @@ export default class FetchRandomUser extends React.Component {
       );
   }
 
-  capitalizeFirstLetter = string => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
-
   render() {
     if (this.state.loading) {
       return <div>loading...</div>;
@@ -40,8 +36,8 @@ export default class FetchRandomUser extends React.Component {
         <img src={this.state.person.picture.large} alt="profile-pic" />
 
         <h1>
-          {this.capitalizeFirstLetter(this.state.person.name.first)}{" "}
-          {this.capitalizeFirstLetter(this.state.person.name.last)}
+          {this.props.capitalize(this.state.person.name.first)}{" "}
+          {this.props.capitalize(this.state.person.name.last)}
         </h1>
       </div>
     );
